@@ -14,7 +14,7 @@ Aplicación web multicontenedor desplegada con Docker Compose. El stack esta com
 - Docker 24+ con Docker Compose v2 (plugin integrado)
 - Sistema Linux o WSL2
 
-## Como ejecutar
+## Cómo ejecutar
 ​```bash
 docker compose up -d --build
 ​```
