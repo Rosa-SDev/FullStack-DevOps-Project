@@ -1,10 +1,10 @@
-# Proyecto 03 - Aplicacion Multicontenedor con Docker Compose
+# Proyecto 03 - Aplicación Multicontenedor con Docker Compose
 **Asignatura:** Infraestructura y Seguridad Computacional
-**Universidad de Ibague - Ingenieria de Sistemas**
-**Docente:** Msc. Ing. Carlos Andres Diaz Santacruz
+**Universidad de Ibagué - Ingeniería de Sistemas**
+**Docente:** Msc. Ing. Carlos Andrés Díaz Santacruz
 
 ## Descripción
-Aplicación web multicontenedor desplegada con Docker Compose. El stack esta compuesto por tres servicios:
+Aplicación web multicontenedor desplegada con Docker Compose. El stack está compuesto por tres servicios:
 
 - **web**: API en Python (Flask) que consulta el estado de la base de datos.
 - **db**: Servidor PostgreSQL 15 persistente mediante volumen.
@@ -27,7 +27,7 @@ Servicios disponibles:
 ## Detener y limpiar
 ​```bash
 docker compose down            # detiene los contenedores
-docker compose down -v         # detiene y borra los volumenes
+docker compose down -v         # detiene y borra los volúmenes
 ​```
 
 ## Imagen publicada en Docker Hub
