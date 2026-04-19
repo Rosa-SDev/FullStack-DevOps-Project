@@ -1,0 +1,65 @@
+services:
+  # Servicio 1: Aplicacion web en Python (Flask)
+  web:
+    build: ./app
+    image: rosedev1/fullstack-app:latest
+    container_name: flask_app
+    ports:
+      - "5000:5000"
+    environment:
+      DB_HOST: db
+      DB_NAME: appdb
+      DB_USER: appuser
+      DB_PASSWORD: apppassword
+      DB_PORT: 5432
+    depends_on:
+      db:
+        condition: service_healthy
+    networks:
+      - app_network
+    volumes:
+      - app_logs:/app/logs
+    restart: unless-stopped
+
+  # Servicio 2: Base de datos PostgreSQL
+  db:
+    image: postgres:15
+    container_name: postgres_db
+    restart: always
+    environment:
+      POSTGRES_DB: appdb
+      POSTGRES_USER: appuser
+      POSTGRES_PASSWORD: apppassword
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - app_network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U appuser -d appdb"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # Servicio 3: Adminer (visualizador web de la base de datos)
+  adminer:
+    image: adminer:latest
+    container_name: adminer_ui
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+    networks:
+      - app_network
+
+# Definicion de volumenes persistentes
+volumes:
+  postgres_data:
+  app_logs:
+
+# Definicion de la red personalizada
+networks:
+  app_network:
+    driver: bridge
