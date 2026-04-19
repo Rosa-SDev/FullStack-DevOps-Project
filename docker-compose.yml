@@ -17,7 +17,7 @@
 # https://github.com/Rosa-SDev/FullStack-DevOps-Project
 
 services:
-  # Servicio 1: Aplicacion web en Python (Flask)
+  # Servicio 1: Aplicación web en Python (Flask)
   web:
     build: ./app
     image: rosedev1/fullstack-app:latest
@@ -72,12 +72,12 @@ services:
     networks:
       - app_network
 
-# Definicion de volumenes persistentes
+# Definición de volúmenes persistentes
 volumes:
   postgres_data:
   app_logs:
 
-# Definicion de la red personalizada
+# Definición de la red personalizada
 networks:
   app_network:
     driver: bridge
