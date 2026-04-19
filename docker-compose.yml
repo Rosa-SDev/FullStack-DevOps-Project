@@ -1,3 +1,21 @@
+# Proyecto 03 - Grupo 01 - Infraestructura y Seguridad Computacional
+# Integrantes:
+# - Manuel Montoya
+# - Daniel Guzmán
+# - Steven Camacho
+# - Brahiyan Sánchez
+# - Rosa Peña
+
+# Imagen publicada en Docker Hub:
+# https://hub.docker.com/r/rosedev1/fullstack-app
+# Pull: docker pull rosedev1/fullstack-app:latest
+
+# Video de sustentación (respaldo): 
+# https://drive.google.com/drive/folders/1bW6CghtoDM_SaY7l2h_kBiT0HBqM5zCm?usp=sharing
+
+# Repositorio GitHub:
+# https://github.com/Rosa-SDev/FullStack-DevOps-Project
+
 services:
   # Servicio 1: Aplicacion web en Python (Flask)
   web:
